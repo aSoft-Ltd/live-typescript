@@ -10,8 +10,12 @@ live.value = "Test 2"
 
 live.value = "Test 3"
 
+console.log(live)
+
 watch.stop()
 
 live.value = "Test 4"
 
-live.value = "Test 4"
+live.value = "Test 5"
+
+console.log(live)
