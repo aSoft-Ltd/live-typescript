@@ -19,8 +19,8 @@ jobs:
       - run: rm **/test -rf
         working-directory: ./live-core
       - uses: JS-DevTools/npm-publish@v1
-        package: ./live-core/package.json
-        access: public
         with:
           token: ${{ secrets.ASOFT_NPM_TOKEN }}
+          package: ./live-core/package.json
+          access: public
         
