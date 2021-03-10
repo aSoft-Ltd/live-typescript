@@ -1,8 +1,8 @@
 {
   "name": "@asoft-ltd/live-core",
-  "version": "0.0.14-dev01",
+  "version": "0.0.14-dev02",
   "description": "An Observable Object ",
-  "main": "dist/main/index.js",
+  "main": "dist/index.js",
   "types": "src/main",
   "devDependencies": {
     "@types/jest": "^26.0.20",
