@@ -1,6 +1,6 @@
 {
   "name": "@asoft-ltd/live-react",
-  "version": "0.0.15-dev04",
+  "version": "0.0.15-dev05",
   "description": "An Observable Object ",
   "main": "dist/index.js",
   "types": "src/main",
