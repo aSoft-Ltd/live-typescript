@@ -16,7 +16,7 @@ jobs:
         run: npm install
         working-directory: ./live-core
       - name: remove none production assets
-        run: rm src/test sample -rf
+        run: rm src/test -rf
         working-directory: ./live-core
       - name: live-core-npm-run-build
         run: npm run build
@@ -31,7 +31,7 @@ jobs:
         run: npm remove @asoft-ltd/live-core
         working-directory: ./live-react
       - name: live-react-add-live-core
-        run: npm install @asoft-ltd/live-core
+        run: npm install @asoft-ltd/live-core@latest
         working-directory: ./live-react
       - name: live-react-npm-install
         run: npm install
