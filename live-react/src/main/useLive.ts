@@ -1,7 +1,7 @@
 import { Live, Watcher } from "@asoft-ltd/live-core"
 import { useState, useEffect } from "react"
 
-export function useLive<T>(live: Live<T>): T {
+function useLive<T>(live: Live<T>): T {
     const [value, setValue] = useState(live.value)
     useEffect(() => {
         const watcher = live.watch(v => setValue(v))
@@ -11,3 +11,5 @@ export function useLive<T>(live: Live<T>): T {
     }, [])
     return value;
 }
+
+export { Live, Watcher, useLive }

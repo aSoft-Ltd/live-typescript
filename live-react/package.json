@@ -20,7 +20,7 @@
     "react": ">=16.0.0"
   },
   "dependencies": {
-    "@asoft-ltd/live-core": "0.0.14"
+    "@asoft-ltd/live-core": "file:../live-core"
   },
   "scripts": {
     "build": "tsc",
