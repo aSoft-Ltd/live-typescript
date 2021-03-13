@@ -12,15 +12,36 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-      - run: npm install
+      - name: live-core-npm-install
+        run: npm install
         working-directory: ./live-core
-      - run: rm src/test sample -rf
+      - name: remove none production assets
+        run: rm src/test sample -rf
         working-directory: ./live-core
-      - run: npm run build
+      - name: live-core-npm-run-build
+        run: npm run build
         working-directory: ./live-core
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.ASOFT_NPM_TOKEN }}
           package: ./live-core/package.json
+          access: public
+
+      - name: live-react-remove-live-core
+        run: npm remove @asoft-ltd/live-core
+        working-directory: ./live-react
+      - name: live-react-add-live-core
+        run: npm install @asoft-ltd/live-core
+        working-directory: ./live-react
+      - name: live-react-npm-install
+        run: npm install
+        working-directory: ./live-react
+      - name: live-react-npm-run-build
+        run: npm run build
+        working-directory: ./live-react
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.ASOFT_NPM_TOKEN }}
+          package: ./live-react/package.json
           access: public
         

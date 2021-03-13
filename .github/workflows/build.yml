@@ -5,14 +5,30 @@ on:
     branches: [ master-dev ]
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-      - run: npm install
+
+      - name: live-core-npm-install
+        run: npm install
         working-directory: ./live-core
-      - run: npm test
+      - name: live-core-npm-test
+        run: npm run test
         working-directory: ./live-core
+
+      - name: live-react-remove-live-core-dependency
+        run: npm remove @asoft-ltd/live-core
+        working-directory: ./live-react
+      - name: live-react-add-live-core-dependency
+        run: npm i ../live-core
+        working-directory: ./live-react
+      - name: live-react-npm-install
+        run: npm install
+        working-directory: ./live-react
+      - name: live-react-npm-build
+        run: npm run build
+        working-directory: ./live-react
