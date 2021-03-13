@@ -10,8 +10,8 @@ interface CounterProps {
 }
 
 function Counter(props: CounterProps) {
-  const value = useLive(live)
   const { onToggle } = props
+  const value = useLive(live)
   return (
     <div className="App">
       Live Value: {value}
